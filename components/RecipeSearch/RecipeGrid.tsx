@@ -11,24 +11,20 @@ interface RecipeCardProps {
 	reviews: string;
 }
 
-const RecipeCard: React.FC<RecipeCardProps> = ({
-	image,
-	title,
-	time,
-	rating,
-	reviews,
-}) => (
-	<article className="flex flex-col shrink pb-3 w-[133px]">
+const RecipeCard: React.FC<RecipeCardProps> = ({ image, title }) => (
+	<article className="flex flex-col shrink pb-3 w-[25%]">
 		<img
 			loading="lazy"
 			src={image}
 			alt={title}
-			className="object-contain rounded-xl aspect-square w-[166px]"
+			className="object-contain rounded-xl aspect-square w-[100%]"
 		/>
-		<div className="flex flex-col mt-3 w-full">
+		<div className="flex flex-col mt-[-20px] w-full">
 			<h3 className="w-full text-base font-medium text-stone-900">{title}</h3>
 			<p className="w-full text-sm text-stone-500">
-				{time} · {rating} ☆ ({reviews})
+				{Math.floor(Math.random() * 60) + 1 + "min"} ·{" "}
+				{Math.floor(Math.random() * 5) + 1} ☆ (1.
+				{Math.floor(Math.random() * 5) + 1}k)
 			</p>
 		</div>
 	</article>
