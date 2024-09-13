@@ -1,6 +1,5 @@
-import React from "react";
-import FilterContainer from "../../components/FilterComponents/FilterContainer";
-import Header from "../../components/Header/Header";
+'use client';
+import React, { useEffect, useState } from "react";
 import IngredientList from "@/components/IngredientList/IngredientList";
 import RecipeDetailsCard from "@/components/RecipeDetailsCard";
 import { RecipeCardProps } from "@/components/RecipeDetailsCard/RecipeDetailsCard";
@@ -60,9 +59,26 @@ const reviews: ReviewsProps = {
 }
 
 const RecipeDetail = () => {
+  const [recipeInfo, setRecipeInfo] = useState(null);
+
+  const recipeId: string = '716429';
+
+  useEffect(() => {
+    const fetchRecipeInfo = async () => {
+      try {
+        const response = await fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=9436712394b8418c86f89f81d8c0509b`);
+        const data = await response.json();
+        setRecipeInfo(data);
+      } catch (error) {
+        console.error("Error fetching recipe information:", error);
+      }
+    };
+
+    fetchRecipeInfo();
+  }, []);
+
   return (
     <div style={{ display: 'flex', gap: '16px' }}>
-      {/* <FilterContainer /> */}
       <CategoriesMenu />
       <div className='flex flex-col g-6'>
         <RecipeDetailsCard {...recipeCard} />
