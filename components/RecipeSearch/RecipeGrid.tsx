@@ -4,105 +4,51 @@
 import React from "react";
 
 interface RecipeCardProps {
-  image: string;
-  title: string;
-  time: string;
-  rating: string;
-  reviews: string;
+	image: string;
+	title: string;
+	time: string;
+	rating: string;
+	reviews: string;
 }
 
 const RecipeCard: React.FC<RecipeCardProps> = ({
-  image,
-  title,
-  time,
-  rating,
-  reviews,
+	image,
+	title,
+	time,
+	rating,
+	reviews,
 }) => (
-  <article className="flex flex-col grow shrink pb-3 w-[133px]">
-    <img
-      loading="lazy"
-      src={image}
-      alt={title}
-      className="object-contain rounded-xl aspect-square w-[166px]"
-    />
-    <div className="flex flex-col mt-3 w-full">
-      <h3 className="w-full text-base font-medium text-stone-900">{title}</h3>
-      <p className="w-full text-sm text-stone-500">
-        {time} · {rating} ☆ ({reviews})
-      </p>
-    </div>
-  </article>
+	<article className="flex flex-col shrink pb-3 w-[133px]">
+		<img
+			loading="lazy"
+			src={image}
+			alt={title}
+			className="object-contain rounded-xl aspect-square w-[166px]"
+		/>
+		<div className="flex flex-col mt-3 w-full">
+			<h3 className="w-full text-base font-medium text-stone-900">{title}</h3>
+			<p className="w-full text-sm text-stone-500">
+				{time} · {rating} ☆ ({reviews})
+			</p>
+		</div>
+	</article>
 );
 
-const RecipeGrid: React.FC = () => {
-  const recipes = [
-    {
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/8dc52dba81eb3f8994b3fb8ccc3ec87dd7ae31fabfce252b2fcd06a66435ebdc?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-      title: "Egg Fried Rice",
-      time: "15 min",
-      rating: "4.9",
-      reviews: "1.1k",
-    },
-    {
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/cc190134cb2708839f089b931ec0271859cd1c0bc4e536f95c3114fb5ad1e912?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-      title: "Egg Drop Soup",
-      time: "10 min",
-      rating: "4.8",
-      reviews: "1.2k",
-    },
-    {
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/3e6343b13be0621570b34c8ed59ad565b45f5025c779d5c0c2bd42c410f3939d?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-      title: "Scrambled Eggs",
-      time: "5 min",
-      rating: "4.9",
-      reviews: "1.3k",
-    },
-    {
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/ddb7bc45d6207fe619c9323eafb9a3d21e3673d0ad8af5d8203880ea28a3169a?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-      title: "Egg Salad",
-      time: "20 min",
-      rating: "4.7",
-      reviews: "1k",
-    },
-    {
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/336a352b51da259c8e872f9cf5babf80dd7b4d978c61c7420ce1e2ea2e39fd41?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-      title: "Deviled Eggs",
-      time: "30 min",
-      rating: "4.8",
-      reviews: "1.2k",
-    },
-    {
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/a67c931f5d806e6754dc86e229d9db0c82d04f71d4bea93f96f10c872f3b0dfc?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-      title: "Omelette",
-      time: "10 min",
-      rating: "4.9",
-      reviews: "1.1k",
-    },
-    {
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/96cbddb868e5fd9c46d6bf4a7d8822fcc9ada4546bd17ded2e2c87f55bcc43b3?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-      title: "Eggs Benedict",
-      time: "25 min",
-      rating: "4.9",
-      reviews: "1.3k",
-    },
-  ];
+interface RecipeGridProps {
+	recipes: any[] | null;
+}
 
-  return (
-    <section className="flex flex-col p-4 w-full max-md:max-w-full">
-      <div className="flex flex-wrap gap-3 items-start w-full max-md:max-w-full">
-        {recipes.map((recipe, index) => (
-          <RecipeCard key={index} {...recipe} />
-        ))}
-      </div>
-    </section>
-  );
+const RecipeGrid: React.FC<RecipeGridProps> = ({ recipes }) => {
+	console.log(recipes);
+	return (
+		<section className="flex flex-col p-4 w-full max-md:max-w-full">
+			<div className="flex flex-wrap gap-3 items-start w-full max-md:max-w-full">
+				{recipes?.map((recipe, index) => (
+					<RecipeCard key={index} {...recipe} />
+				))}
+			</div>
+		</section>
+	);
 };
 
 export default RecipeGrid;
