@@ -4,14 +4,14 @@
 import React from "react";
 
 interface RatingProps {
-  rating: number;
-  ratingCount: number;
+  rating?: number;
+  ratingCount?: number;
 }
 
 const Rating: React.FC<RatingProps> = ({ rating, ratingCount }) => {
   return (
     <div className="w-full max-md:max-w-full">
-      {rating.toFixed(1)} ({ratingCount} rating{ratingCount !== 1 ? "s" : ""})
+      {rating?.toFixed(1)} ({ratingCount} rating{ratingCount !== 1 ? "s" : ""})
     </div>
   );
 };
