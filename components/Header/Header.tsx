@@ -9,11 +9,11 @@ import ProfileImage from "./ProfileImage";
 
 const Header: React.FC = () => {
   return (
-    <header className="flex flex-wrap justify-between items-center px-10 py-3 w-full border-b border-gray-200 max-md:px-5 max-md:max-w-full">
+    <header className="flex justify-between items-center px-10 py-3 w-full border-b border-gray-200 max-md:px-5">
       <Logo />
-      <div className="flex flex-wrap flex-1 shrink gap-8 items-start self-stretch my-auto basis-0 min-w-[240px] max-md:max-w-full">
+      <div className="flex flex-1 justify-between items-center gap-8">
         <Navigation />
-        <div className="flex gap-2 items-start">
+        <div className="flex gap-2 items-center">
           <IconButton
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/71b627762aef93e129753d5fb9bb8d1507d100f662fe0a2e899cba85302261d0?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
             alt="Search"

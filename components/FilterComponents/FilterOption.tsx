@@ -21,7 +21,7 @@ const FilterOption: React.FC<FilterOptionProps> = ({ label, isSelected }) => {
         }`}
       >
         {isSelected && (
-          <div className="flex shrink-0 w-2 bg-orange-500 rounded h-[7px]" />
+          <div className="flex shrink-0 w-2 h-2 bg-orange-500 rounded-full" />
         )}
       </div>
       <div className="flex flex-col self-stretch my-auto text-sm font-medium whitespace-nowrap text-stone-900 w-[220px]">

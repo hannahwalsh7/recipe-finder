@@ -9,13 +9,13 @@ import Pagination from "./Pagination";
 
 const RecipeSearch: React.FC = () => {
   return (
-    <main className="flex overflow-hidden flex-col flex-1 shrink basis-0 max-w-[960px] min-w-[240px] max-md:max-w-full">
-      <header className="flex flex-wrap gap-3 justify-between items-start p-4 w-full max-md:max-w-full">
-        <div className="flex flex-col min-w-[288px] w-[352px]">
-          <h1 className="max-w-full text-3xl font-bold leading-none text-stone-900 w-[352px]">
+    <main className="flex overflow-hidden flex-col flex-1 shrink basis-0 w-full max-w-full min-w-[240px]">
+      <header className="flex flex-wrap gap-3 justify-between items-start p-4 w-full">
+        <div className="flex flex-col w-full max-w-[352px]">
+          <h1 className="text-3xl font-bold leading-none text-stone-900 w-full">
             What's in your fridge?
           </h1>
-          <p className="mt-3 max-w-full text-sm text-stone-500 w-[352px]">
+          <p className="mt-3 text-sm text-stone-500 w-full">
             We'll find the recipes for you
           </p>
         </div>
