@@ -8,32 +8,38 @@ import IconButton from "./IconButton";
 import ProfileImage from "./ProfileImage";
 
 const Header: React.FC = () => {
-  return (
-    <header className="flex flex-wrap justify-between items-center px-10 py-3 w-full border-b border-gray-200 max-md:px-5 max-md:max-w-full">
-      <Logo />
-      <div className="flex flex-wrap flex-1 shrink gap-8 items-start self-stretch my-auto basis-0 min-w-[240px] max-md:max-w-full">
-        <Navigation />
-        <div className="flex gap-2 items-start">
-          <IconButton
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/71b627762aef93e129753d5fb9bb8d1507d100f662fe0a2e899cba85302261d0?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
-            alt="Search"
-          />
-          <IconButton
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9564f82039a648e0f1ab4697f0432b181515c76f928d4bee8740eadd1644244?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
-            alt="Notifications"
-          />
-          <IconButton
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ed98a176dd0446de8a72279b5631a43648f907e2a45c2646e6ae441507376e2?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
-            alt="Settings"
-          />
-        </div>
-        <ProfileImage
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c46c8b5d4af8ece2e2f07cbc56567c436bd40440f33640e661fe3d6e1e5b999d?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
-          alt="User profile"
-        />
-      </div>
-    </header>
-  );
+	return (
+		<header className="flex flex-wrap justify-between items-center px-10 py-3 w-full border-b border-gray-200 max-md:px-5 max-md:max-w-full">
+			<div>
+				<Logo />
+			</div>
+			<div className="flex flex-wrap shrink gap-8 items-start self-stretch my-auto  min-w-[240px] max-md:max-w-full">
+				<Navigation />
+				<div className="flex">
+					<div className="flex gap-2 items-start">
+						<IconButton
+							src="https://cdn.builder.io/api/v1/image/assets/TEMP/71b627762aef93e129753d5fb9bb8d1507d100f662fe0a2e899cba85302261d0?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
+							alt="Search"
+						/>
+						<IconButton
+							src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9564f82039a648e0f1ab4697f0432b181515c76f928d4bee8740eadd1644244?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
+							alt="Notifications"
+						/>
+						<IconButton
+							src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ed98a176dd0446de8a72279b5631a43648f907e2a45c2646e6ae441507376e2?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
+							alt="Settings"
+						/>
+					</div>
+					<div className="pl-6">
+						<ProfileImage
+							src="https://cdn.builder.io/api/v1/image/assets/TEMP/c46c8b5d4af8ece2e2f07cbc56567c436bd40440f33640e661fe3d6e1e5b999d?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
+							alt="User profile"
+						/>
+					</div>
+				</div>
+			</div>
+		</header>
+	);
 };
 
 export default Header;
