@@ -7,6 +7,7 @@ import { RecipeCardProps } from "@/components/RecipeDetailsCard/RecipeDetailsCar
 import Instructions from "@/components/Instructions/Instructions";
 import NutritionalInfo from "@/components/NutritionalInfo/NutritionalInfo";
 import Reviews, { ReviewsProps } from "@/components/Reviews/Reviews";
+import CategoriesMenu from "@/components/CategoriesMenu/CategoriesMenu";
 
 
 const recipeCard: RecipeCardProps =
@@ -58,10 +59,11 @@ const reviews: ReviewsProps = {
   ]
 }
 
-const Search = () => {
+const RecipeDetail = () => {
   return (
     <div style={{ display: 'flex', gap: '16px' }}>
-      <FilterContainer />
+      {/* <FilterContainer /> */}
+      <CategoriesMenu />
       <div className='flex flex-col g-6'>
         <RecipeDetailsCard {...recipeCard} />
         <IngredientList />
@@ -74,4 +76,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default RecipeDetail;
