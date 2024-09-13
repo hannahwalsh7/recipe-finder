@@ -3,97 +3,119 @@
  */
 import React from "react";
 import RecipeSection from "./RecipeSection";
+import { SearchIcon } from "@heroicons/react/outline";
 
 const trendingRecipes = [
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/416608c6832edf79a03bb285ca91d7376dda281971a5f4587841e556b07d8066?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Spaghetti Carbonara",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/1202941cbd7fc304a6f71670114e67e5cbc7ad1a797c444127fe6ea5a435f8d7?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Chicken Alfredo",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/97290245546fc1f2b49a8c1a3349a8a0d1116910bb66534a6990af4a84c0fcfd?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Lasagna",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/d866e268afdfe2559c7ebfa067c945db8eff51cfbc9a1c54b7d5ce3fa282b505?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Chicken Parmesan",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/6e1a17e714279980f63ed734f4df2e4dc34bc891520599423f35832b3f9a1f82?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Grilled Cheese",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/edadc0fc7d28433aecd49d62fa0bffa76692f7161f1bde253b56afd777d2baef?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Mac and Cheese",
-  },
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/416608c6832edf79a03bb285ca91d7376dda281971a5f4587841e556b07d8066?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Spaghetti Carbonara",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/1202941cbd7fc304a6f71670114e67e5cbc7ad1a797c444127fe6ea5a435f8d7?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Chicken Alfredo",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/97290245546fc1f2b49a8c1a3349a8a0d1116910bb66534a6990af4a84c0fcfd?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Lasagna",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/d866e268afdfe2559c7ebfa067c945db8eff51cfbc9a1c54b7d5ce3fa282b505?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Chicken Parmesan",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/6e1a17e714279980f63ed734f4df2e4dc34bc891520599423f35832b3f9a1f82?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Grilled Cheese",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/edadc0fc7d28433aecd49d62fa0bffa76692f7161f1bde253b56afd777d2baef?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Mac and Cheese",
+	},
 ];
 
 const popularRecipes = [
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/1647b0921cebf07e827244f16ff7616f62a3cc00775d1760813c6001e0cb8a38?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Spaghetti Carbonara",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/c8009650ea41bb87aafc7e95d4d3891fe52fe4137fd497ffd547a0f41fd68324?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Chicken Alfredo",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/afde7f22251fd1d11a04803362b4e811d78676732b0cf1f68fa2344b09b00d50?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Lasagna",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/6d7f018493887c5ffc7aa846c3a4e5ffb7b54104febf0523fb423cef9c4c3567?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Chicken Parmesan",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/56a0925ac6b37c0697ec6d3495d366dc5cff8b851ecb333562a51b631707149c?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Grilled Cheese",
-  },
-  {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/bc7650a5649b6991147f753c9ec36f8779c2507d379dc91cf595fe3076f26496?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
-    title: "Mac and Cheese",
-  },
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/1647b0921cebf07e827244f16ff7616f62a3cc00775d1760813c6001e0cb8a38?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Spaghetti Carbonara",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/c8009650ea41bb87aafc7e95d4d3891fe52fe4137fd497ffd547a0f41fd68324?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Chicken Alfredo",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/afde7f22251fd1d11a04803362b4e811d78676732b0cf1f68fa2344b09b00d50?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Lasagna",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/6d7f018493887c5ffc7aa846c3a4e5ffb7b54104febf0523fb423cef9c4c3567?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Chicken Parmesan",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/56a0925ac6b37c0697ec6d3495d366dc5cff8b851ecb333562a51b631707149c?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Grilled Cheese",
+	},
+	{
+		imageSrc:
+			"https://cdn.builder.io/api/v1/image/assets/TEMP/bc7650a5649b6991147f753c9ec36f8779c2507d379dc91cf595fe3076f26496?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea",
+		title: "Mac and Cheese",
+	},
 ];
 
 const RecipePage: React.FC = () => {
-  return (
-    <main className="flex flex-col bg-white">
-      <div className="flex overflow-hidden flex-col w-full bg-stone-50 min-h-[800px] max-md:max-w-full">
-        <div className="flex flex-col w-full max-md:max-w-full">
-          <div className="flex flex-1 justify-center items-start px-40 py-5 size-full max-md:px-5 max-md:max-w-full">
-            <div className="flex overflow-hidden flex-col flex-1 shrink w-full basis-0 max-w-[960px] min-w-[240px] max-md:max-w-full">
-              <section className="flex relative flex-col w-full min-h-[512px] max-md:max-w-full">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/d39f4c4d174e66742b519f6b53e1b24237d4b3f1285acbfb330e59cec0167680?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea"
-                  alt="Featured recipe"
-                  className="object-cover absolute inset-0 size-full"
-                />
-                <div className="flex relative flex-1 py-4 w-full min-h-[512px] max-md:max-w-full" />
-              </section>
-              <RecipeSection title="Trending Now" recipes={trendingRecipes} />
-              <RecipeSection title="Popular Recipes" recipes={popularRecipes} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+	return (
+		<main className="flex flex-col pt-10">
+			<div className="flex overflow-hidden flex-col w-full bg-stone-50 min-h-[800px] max-md:max-w-full">
+				<div className="flex flex-col w-full max-md:max-w-full">
+					<div className="flex flex-1 justify-center items-start px-40 py-5 size-full max-md:px-5 max-md:max-w-full">
+						<div className="flex overflow-hidden flex-col flex-1 shrink w-full basis-0 max-w-[960px] min-w-[240px] max-md:max-w-full">
+							<section
+								className="flex relative flex-col w-full min-h-[512px] max-md:max-w-full bg-no-repeat bg-cover bg-center rounded-lg mb-6"
+								style={{
+									backgroundImage:
+										"url('https://cdn.builder.io/api/v1/image/assets/TEMP/5a2b73ee2c16bfbac405dc8dd8fe2e3c4608b8d157f35c42a4bb8e4e41826d14?placeholderIfAbsent=true&apiKey=4acd4cdcb7dc4d7e9af8a5ed4cd634ea')",
+								}}
+							>
+								<div className="absolute inset-0 bg-black bg-opacity-10 rounded-lg flex flex-col items-center justify-center p-4">
+									<h1 className="text-white text-2xl md:text-4xl font-bold mb-8">
+										What do you want to cook today?
+									</h1>
+									<div className="flex w-full max-w-md z-10 relative">
+										<span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+											<SearchIcon
+												className="h-5 w-5 text-gray-500"
+												aria-hidden="true"
+											/>
+										</span>
+										<input
+											type="text"
+											className="flex-grow pl-10 p-4 rounded-lg focus:outline-none"
+											placeholder="Search for recipes..."
+										/>
+										<button className="absolute right-2 top-[50%] translate-y-[-50%] bg-orange-500 text-black px-4 py-2 rounded-lg hover:bg-orange-400 focus:outline-none">
+											Search
+										</button>
+									</div>
+								</div>
+								<div className="flex relative flex-1 py-4 w-full min-h-[512px] max-md:max-w-full" />
+							</section>
+							<RecipeSection title="Trending Now" recipes={trendingRecipes} />
+							<RecipeSection title="Popular Recipes" recipes={popularRecipes} />
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	);
 };
 
 export default RecipePage;
