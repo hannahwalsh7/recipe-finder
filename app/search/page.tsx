@@ -5,12 +5,9 @@ import Header from "../../components/Header/Header";
 
 const Search = () => {
   return (
-    <div>
-      <Header />
-      <div style={{ display: 'flex', gap: '16px' }}>
-        <FilterContainer />
-        <RecipeSearch />
-      </div>
+    <div style={{ display: 'flex', gap: '16px' }}>
+      <FilterContainer />
+      <RecipeSearch />
     </div>
   );
 };

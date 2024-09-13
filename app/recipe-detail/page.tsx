@@ -60,19 +60,16 @@ const reviews: ReviewsProps = {
 
 const Search = () => {
   return (
-    <div>
-      <Header />
-      <div style={{ display: 'flex', gap: '16px' }}>
-        <FilterContainer />
-        <div className='flex flex-col g-6'>
-          <RecipeDetailsCard {...recipeCard} />
-          <IngredientList />
-          <Instructions />
-          <NutritionalInfo />
-          <Reviews {...reviews} />
-        </div>
-
+    <div style={{ display: 'flex', gap: '16px' }}>
+      <FilterContainer />
+      <div className='flex flex-col g-6'>
+        <RecipeDetailsCard {...recipeCard} />
+        <IngredientList />
+        <Instructions />
+        <NutritionalInfo />
+        <Reviews {...reviews} />
       </div>
+
     </div>
   );
 };
