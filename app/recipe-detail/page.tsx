@@ -8,18 +8,6 @@ import NutritionalInfo from "@/components/NutritionalInfo/NutritionalInfo";
 import Reviews, { ReviewsProps } from "@/components/Reviews/Reviews";
 import CategoriesMenu from "@/components/CategoriesMenu/CategoriesMenu";
 
-
-const recipeCard: RecipeCardProps =
-{
-  rating: 4.5,
-  ratingCount: 120,
-  title: "Spaghetti Carbonara",
-  cookTime: "30 minutes",
-  servings: 4,
-  caloriesPerServing: 600,
-  imageSrc: "https://example.com/spaghetti-carbonara.jpg"
-}
-
 const reviews: ReviewsProps = {
   overallRating: 4.5,
   totalReviews: 120,
@@ -59,23 +47,33 @@ const reviews: ReviewsProps = {
 }
 
 const RecipeDetail = () => {
-  const [recipeInfo, setRecipeInfo] = useState(null);
+  const [recipeCard, setRecipeCard] = useState<RecipeCardProps | null>(null);
 
   const recipeId: string = '716429';
 
   useEffect(() => {
     const fetchRecipeInfo = async () => {
       try {
-        const response = await fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false&apiKey=9436712394b8418c86f89f81d8c0509b`);
+        const response = await fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=a5b6944d22c04b28898e68f319f5d5d7`);
         const data = await response.json();
-        setRecipeInfo(data);
+
+        setRecipeCard({
+          rating: 4.5,
+          ratingCount: 120,
+          title: data?.title,
+          cookTime: data?.readyInMinutes + " minutes",
+          servings: data?.servings,
+          caloriesPerServing: data.nutrition.nutrients[0].amount ?? 0,
+          imageSrc: data?.image ?? ''
+        });
       } catch (error) {
         console.error("Error fetching recipe information:", error);
       }
     };
 
-    fetchRecipeInfo();
-  }, []);
+    fetchRecipeInfo()
+
+  }, [recipeId]);
 
   return (
     <div style={{ display: 'flex', gap: '16px' }}>

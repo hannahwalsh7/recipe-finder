@@ -7,13 +7,13 @@ import RecipeDetails from "./RecipeDetails";
 import AddToMealPlanButton from "./AddToMealPlanButton";
 
 export interface RecipeCardProps {
-  rating: number;
-  ratingCount: number;
-  title: string;
-  cookTime: string;
-  servings: number;
-  caloriesPerServing: number;
-  imageSrc: string;
+  rating?: number;
+  ratingCount?: number;
+  title?: string;
+  cookTime?: string;
+  servings?: number;
+  caloriesPerServing?: number;
+  imageSrc?: string;
 }
 
 const RecipeDetailsCard: React.FC<RecipeCardProps> = ({
@@ -30,14 +30,14 @@ const RecipeDetailsCard: React.FC<RecipeCardProps> = ({
       <div className="flex flex-wrap justify-between items-start w-full rounded-xl max-md:max-w-full">
         <div className="flex flex-col min-h-[171px] min-w-[240px] w-[608px] max-md:max-w-full">
           <div className="flex flex-col w-full text-stone-500 max-md:max-w-full">
-            <Rating rating={rating} ratingCount={ratingCount} />
+            {rating != null ? <Rating rating={rating} ratingCount={ratingCount} /> : ''}
             <h2 className="mt-1 w-full text-base font-bold leading-none text-stone-900 max-md:max-w-full">
               {title}
             </h2>
             <RecipeDetails
-              cookTime={cookTime}
-              servings={servings}
-              caloriesPerServing={caloriesPerServing}
+              cookTime={cookTime ?? ''}
+              servings={servings ?? 0}
+              caloriesPerServing={caloriesPerServing ?? 0}
             />
           </div>
           <AddToMealPlanButton />
