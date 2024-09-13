@@ -6,7 +6,7 @@ import Rating from "./Rating";
 import RecipeDetails from "./RecipeDetails";
 import AddToMealPlanButton from "./AddToMealPlanButton";
 
-interface RecipeCardProps {
+export interface RecipeCardProps {
   rating: number;
   ratingCount: number;
   title: string;
@@ -16,7 +16,7 @@ interface RecipeCardProps {
   imageSrc: string;
 }
 
-const RecipeCard: React.FC<RecipeCardProps> = ({
+const RecipeDetailsCard: React.FC<RecipeCardProps> = ({
   rating,
   ratingCount,
   title,
@@ -53,4 +53,4 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   );
 };
 
-export default RecipeCard;
+export default RecipeDetailsCard;
